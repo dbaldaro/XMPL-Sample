@@ -111,11 +111,8 @@
                     <h1>Sample page</h1>
                     <p>Your journey into openXM by XMPIE starts here.</p>
                 </div>
-				<div ng-controller="XMPPersonalizedPage"
-						xmp-tracking-page-name="landing page"
-						xmp-cloak
-						>
-					<div class="section">
+				<div ng-controller="XMPPersonalizedPage" xmp-tracking-page-name="landing page" xmp-cloak="">
+					<div class="section" xmp-update-on-page-load xmp-ador="xmp.r['Visited']" xmp-value="1">
 						<div class="holder">
 							<header>
 								<h1 class="pull-left">Text ADOR Example</h1>
@@ -170,7 +167,7 @@
 			            </div>
 			            <div class="holder">
 		                    <h1>Social Media</h1>
-			                <ul class="socials">
+			                <ul class="social-networks">
 			                    <!--
 			                        the facebook examples require that the example site is hosted on a server
 			                        and that app id is registed with this domain. also - all shared urls have to be absolute urls
@@ -192,28 +189,28 @@
 			                    </li>
 			                </ul>
 						</div>
-					<xmp-update-on-page-load xmp-ador="xmp.r['Visited']" xmp-value="1"/>
-					<div class="button-holder text-center">
-						<button class="btn" href="update.html"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>Edit</button>
-						<button class="btn btn-minor" href="refer.html">Refer A Friend</button>
+						<div class="button-holder text-center">
+							<button class="btn" href="update.html"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>Edit</button>
+							<button class="btn btn-minor" href="refer.html">Refer A Friend</button>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<footer>
+            <div class="container">
+                <ul class="socials pull-right">
+                    <li class="twitter"><a href="#">Twitter</a></li>
+                    <li class="facebook"><a href="#">Facebook</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">XMPIE</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+                <p>&copy; XMPie, All Rights Reserved</p>
+            </div>
+        </footer>
 	</div>
-	<footer>
-        <div class="container">
-            <ul class="socials pull-right">
-                <li class="twitter"><a href="#">Twitter</a></li>
-                <li class="facebook"><a href="#">Facebook</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">XMPIE</a></li>
-                <li><a href="#">Blog</a></li>
-            </ul>
-            <p>&copy; XMPie, All Rights Reserved</p>
-        </div>
-    </footer>
 	<script>
         $(window).scroll(function() {
             var scroll = $(window).scrollTop();

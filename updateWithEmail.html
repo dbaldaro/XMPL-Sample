@@ -108,49 +108,57 @@
         <div class="wrapper">
             <div class="container">
                 <div class="promo">
-                    <h1>Welcome!</h1>
-                    <p>Tell us a bit about yourself</p>
+                    <h1>{{xmp.r['First Name']}}'s another update form</h1>
                 </div>
 				<div ng-controller="XMPPersonalizedPage" xmp-tracking-page-name="recipient update" xmp-no-caching>
 					<div class="section">
-						<div class="section-title">{{xmp.r['First Name']}}'s update form2</div>
-						<div class="section-content">
-					      <form xmp-update xmp-success-triggered-email="update" xmp-success-url="index.html">
-					        <ul>
-					            <li>
-					                First Name : <input type="text" xmp-write-ador="xmp.r['First Name']"  size="30">
-					            </li>
-					            <li>
-					                Last Name : <input type="text" xmp-write-ador="xmp.r['Last Name']"  size="30">
-					            </li>
-					        </ul>
-			                <input class="btn-primary" type="submit" value="save">
-					      </form>
-						</div>
-					</div>
-
-					<xmp-email id="update"
-							xmp-touchpoint="E4"
-							xmp-subject="update for  {{xmp.recipientID}} successful"
-							xmp-to="admin@xmpie_service.com"
-					/>
+                        <h1>{{xmp.r['First Name']}}'s another update form</h1>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <img xmp-image-asset="xmp.r['MainImage']"/>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="form-holder">
+                                    <div class="form-title">Update form</div>
+                                        <div class="section">
+                                            <h2 class="text-center">Please fill some details here:</h2>
+                                            <form xmp-update xmp-success-track-action="update">
+                                                <div class="form-group">
+                                                    <label for="text1">First Name</label>
+                                                    <input id="text1" type="text" class="form-control" xmp-write-ador="xmp.r['First Name']" xmp-tracking-action="first name edited">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="text2">Last Name</label>
+                                                    <input id="text2" type="text" class="form-control" xmp-write-ador="xmp.r['Last Name']" xmp-tracking-action="last name edited">
+                                                </div>
+                                                <div class="button-holder">
+                                                    <button class="btn btn-minor" type="submit" value="save" xmp-success-url="index .html?updateaction=firstnameLastNameChanged">Save</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					<xmp-email id="update" xmp-touchpoint="E4" xmp-subject="update for  {{xmp.recipientID}} successful" xmp-to="admin@xmpie_service.com"/>
 				</div>
 			</div>
+			<footer>
+                <div class="container">
+                    <ul class="socials pull-right">
+                        <li class="twitter"><a href="#">Twitter</a></li>
+                        <li class="facebook"><a href="#">Facebook</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">XMPIE</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                    <p>&copy; XMPie, All Rights Reserved</p>
+                </div>
+            </footer>
 		</div>
 	</div>
-	<footer>
-        <div class="container">
-            <ul class="socials pull-right">
-                <li class="twitter"><a href="#">Twitter</a></li>
-                <li class="facebook"><a href="#">Facebook</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">XMPIE</a></li>
-                <li><a href="#">Blog</a></li>
-            </ul>
-            <p>&copy; XMPie, All Rights Reserved</p>
-        </div>
-    </footer>
 	<script>
         $(window).scroll(function() {
             var scroll = $(window).scrollTop();

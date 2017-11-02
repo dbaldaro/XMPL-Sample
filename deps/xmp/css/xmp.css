@@ -5,11 +5,9 @@
 * ========================================================== */
 
 .xmp-facebook-share-btn {
-	background-image: url('../images/ico_facebook_share.png') !important;
-	width: 122px !important;
-	height: 41px;
 	min-width: inherit !important;
 	overflow: hidden;
+	height: 20px !important;
 }
 
 .xmp-busy {
