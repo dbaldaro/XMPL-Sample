@@ -316,7 +316,7 @@ span.mark {
     text-transform: uppercase;
 }
 .section .social-networks li {
-    float: left;
+   /* float: left;*/
     margin-right: 10px;
 }
 .section .social-networks .btn {
