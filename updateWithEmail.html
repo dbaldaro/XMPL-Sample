@@ -26,11 +26,11 @@
             var ridVal = getURLParameter('rid');
             console.log('ResId = ' + ridVal);
             if (ridVal === null){
-              $("#ridList option:last").prop('selected', true);
-              goByHREF();
+              $("#ridList").attr('display', 'none');
+//              goByHREF();
             }
             else{
-              $('#ridList').selectpicker('val', ridVal);
+              $("#ridList").attr('display', 'block');
              // $('#ridList').val(ridVal);
             }
            });
@@ -77,16 +77,16 @@
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Emails<span class="caret"></span></a>
                                         <form method="GET" class="dropdown-menu">
-                                            <select class="selectpicker" id="ridList" name="rid" onchange="goByHREF()">
-                                                <option>Jerry.Jones@example.com</option>
-                                                <option>Jennifer.Jones@example.com</option>
-                                                <option>Jimmy.Jones@example.com</option>
-                                                <option>Sandra.Smith@example.com</option>
-                                                <option>Sam.Smith@example.com</option>
-                                                <option>Mary.McAndrews@example.com</option>
-                                                <option>Mike.McAndrews@example.com</option>
-                                                <option>Gina.Green@example.com</option>
-                                            </select>
+                                            <ul>
+                                                <li><a href="updateWithEmail.html?rid=Jerry.Jones@example.com">Jerry.Jones@example.com</a></li>
+                                                <li><a href="updateWithEmail.html?rid=Jennifer.Jones@example.com">Jennifer.Jones@example.com</a></li>
+                                                <li><a href="updateWithEmail.html?rid=Jimmy.Jones@example.com">Jimmy.Jones@example.com</a></li>
+                                                <li><a href="updateWithEmail.html?rid=Sandra.Smith@example.com">Sandra.Smith@example.com</a></li>
+                                                <li><a href="updateWithEmail.html?rid=Sam.Smith@example.com">Sam.Smith@example.com</a></li>
+                                                <li><a href="updateWithEmail.html?rid=Mary.McAndrews@example.com">Mary.McAndrews@example.com</a></li>
+                                                <li><a href="updateWithEmail.html?rid=Mike.McAndrews@example.com">Mike.McAndrews@example.com</a></li>
+                                                <li><a href="updateWithEmail.html?rid=Gina.Green@example.com">Gina.Green@example.com</a></li>
+                                            </ul>
                                         </form>
                                     </li>
                                     <li class="dropdown">
@@ -113,7 +113,7 @@
                 </div>
             </div>
         </header>
-        <div class="wrapper">
+        <div class="wrapper"  id="ridList">
             <div class="container">
                 <div class="promo">
                     <h1>{{xmp.r['First Name']}}'s another update form</h1>
