@@ -20,33 +20,40 @@
 	<script type="text/javascript" src="./xmpcfg.js"></script>
 	<script type="text/javascript">
 
-	   $(function(){
-	      $(document).ready(function(){
+       $(function(){
+          $(document).ready(function(){
 
-	        var ridVal = getURLParameter('rid');
-	        console.log('ResId = ' + ridVal);
-	        if (ridVal === null){
-	          $("#ridList option:last").prop('selected', true);
-	          goByHREF();
-	        }
-	        else{
-	          $('#ridList').selectpicker('val', ridVal);
-	         // $('#ridList').val(ridVal);
-	        }
-	       });
-	   });
+            var ridVal = getURLParameter('rid');
+            console.log('ResId = ' + ridVal);
+            if (ridVal === null){
+              $("#ridList option:last").prop('selected', true);
+              goByHREF();
+            }
+            else{
+              $('#ridList').selectpicker('val', ridVal);
+             // $('#ridList').val(ridVal);
+            }
+           });
+       });
 
-	    function getURLParameter(name) {
-	      return decodeURIComponent(
-	        (new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)')
-	          .exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
-	    }
+        function getURLParameter(name) {
+          return decodeURIComponent(
+            (new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)')
+              .exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+        }
 
-	    function goByHREF() {
-	        var winLocation = window.location;
-				return winLocation.replace(winLocation.origin + winLocation.pathname + '?rid=' + $('#ridList').val());
-	    }
-	</script>
+        function goByHREF(pageName) {
+            var winLocation = window.location;
+            var value = '?rid=' + $('#ridList').val();
+            if (pageName == null) {
+                return winLocation.replace(winLocation.origin + winLocation.pathname + value);
+            }
+            else {
+                console.log(winLocation);
+                return winLocation.href = pageName + value;
+            }
+        }
+    </script>
 </head>
 <body>
 	<div class="main-wrapper">
@@ -68,19 +75,19 @@
                                 <ul class="nav navbar-nav navbar-right">
                                     <li class="restart"><a href="#">Restart</a></li>
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customers' emails<span class="caret"></span></a>
-                                        <div class="dropdown-menu">
-                                            <ul>
-                                                <li><a href="#">Jerry.Jones@example.com</a></li>
-                                                <li><a href="#">Jennifer.Jones@example.com</a></li>
-                                                <li><a href="#">Jimmy.Jones@example.com</a></li>
-                                                <li><a href="#">Sandra.Smith@example.com</a></li>
-                                                <li><a href="#">Sam.Smith@example.com</a></li>
-                                                <li><a href="#">Mary.McAndrews@example.com</a></li>
-                                                <li><a href="#">Mike.McAndrews@example.com</a></li>
-                                                <li><a href="#">Gina.Green@example.com</a></li>
-                                            </ul>
-                                        </div>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Emails<span class="caret"></span></a>
+                                        <form method="GET" class="dropdown-menu">
+                                            <select class="selectpicker" id="ridList" name="rid" onchange="goByHREF()">
+                                                <option>Jerry.Jones@example.com</option>
+                                                <option>Jennifer.Jones@example.com</option>
+                                                <option>Jimmy.Jones@example.com</option>
+                                                <option>Sandra.Smith@example.com</option>
+                                                <option>Sam.Smith@example.com</option>
+                                                <option>Mary.McAndrews@example.com</option>
+                                                <option>Mike.McAndrews@example.com</option>
+                                                <option>Gina.Green@example.com</option>
+                                            </select>
+                                        </form>
                                     </li>
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Openxm pages<span class="caret"></span></a>
