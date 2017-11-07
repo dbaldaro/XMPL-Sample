@@ -316,8 +316,10 @@ span.mark {
     text-transform: uppercase;
 }
 .section .social-networks li {
-   /* float: left;*/
-    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.section .social-networks li span {
+    display: block;
 }
 .section .social-networks .btn {
     vertical-align: top;
