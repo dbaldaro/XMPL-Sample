@@ -92,7 +92,7 @@ label {
     display: inline-block;
 }
 .btn.pdf span {
-    background: url("../images/ico_adobe.png") no-repeat 0 10px;
+    /*background: url("../images/ico_adobe.png") no-repeat 0 10px;*/
     display: inline-block;
     padding-left: 23px;
 }
