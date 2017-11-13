@@ -79,21 +79,20 @@
                                                     <label for="text2">Last Name</label>
                                                     <input id="text2" type="text" class="form-control" xmp-write-ador="xmp.r['Last Name']" xmp-tracking-action="last name edited">
                                                 </div>
-                                                <div class="form-group">
-                                                    <label for="genderField">Gender</label>
-
-                                                    <!-- Марина, сюда вместо span'a дропдаун-->
-                                                    <span class="form-control" id="genderField">{{xmp.r['Gender']}}</span>
-                                                    
-                                                </div>                                               
-                                                <div class="form-group">
-                                                    <label for="isStudentField">IsStudent</label>
-                                                    <input class="form-control" type="checkbox" id="isStudentField" xmp-write-ador="xmp.r['IsStudent']" />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="vsitedField">Visited</label>                                                   
-                                                    <input class="form-control" type="checkbox" id="vsitedField" xmp-write-ador="xmp.r['Visited']" />
-                                                </div>
+                                                <div class="row check-holder">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+		                                                <div class="form-group">
+		                                                    <label for="isStudentField">IsStudent</label>
+		                                                    <input class="form-control" type="checkbox" id="isStudentField" xmp-write-ador="xmp.r['IsStudent']" />
+		                                                </div>
+		                                            </div>
+		                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+		                                                <div class="form-group">
+		                                                    <label for="vsitedField">Visited</label>
+		                                                    <input class="form-control" type="checkbox" id="vsitedField" xmp-write-ador="xmp.r['Visited']" />
+		                                                </div>
+		                                            </div>
+		                                        </div>
                                                 <div class="form-group">
                                                     <label for="emailField">Email</label>
                                                     <span class="form-control" id="emailField">{{xmp.r['Email']}}</span>

@@ -50,6 +50,20 @@ label {
 .form-control:focus {
     box-shadow: none;
 }
+.form-control[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    float: left;
+    margin-top: 2px;
+}
+.check-holder {
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.check-holder label {
+    float: left;
+    margin-right: 10px;
+}
 .btn {
     background: #03a9f4;
     border-radius: 6px;
@@ -164,6 +178,11 @@ ul > li.twitter a:focus {
 }
 ul > li.facebook a:hover {
     background-position: 0 -23px;
+}
+.nav > li > a {
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: 15px;
 }
 .navbar-default .navbar-nav > li > a {
     color: #fff;
