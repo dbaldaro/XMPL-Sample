@@ -40,7 +40,7 @@
                             <div class="collapse navbar-collapse" id="navbar-collapse">
                                 <ul class="nav navbar-nav navbar-right">
                                     <li><a href="start.html"><i class="fa fa-history" aria-hidden="true"></i>&nbsp;Landing&nbsp;Page</a></li>
-                                    <li><a href="display_data.html"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;Edit</a></li>
+                                    <li><a href="display_data.html"><i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp;View</a></li>
                                     
                                     <li class="github"><a href="#">XMPL on GitHub</a></li>
                                     <li class="twitter"><a href="#">Twitter</a></li>
@@ -48,17 +48,16 @@
                                 </ul>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-bordered pull-right add-recipients">+ Add Recipients</button>
                     </nav>
                 </div>
             </div>
         </header>
         <div class="wrapper">
-            <div class="container">
+            <div class="container" ng-controller="XMPPersonalizedPage" xmp-tracking-page-name="recipient update" xmp-cloak="">
                 <div class="promo">
                     <h1>{{xmp.r['First Name']}}'s update form</h1>
                 </div>
-				<div ng-controller="XMPPersonalizedPage" xmp-tracking-page-name="recipient update" xmp-cloak="">
+				<div>
 					<div class="section">
 						<h1>{{xmp.r['First Name']}}'s update form</h1>
 						<div class="row">
@@ -79,26 +78,26 @@
                                                     <label for="text2">Last Name</label>
                                                     <input id="text2" type="text" class="form-control" xmp-write-ador="xmp.r['Last Name']" xmp-tracking-action="last name edited">
                                                 </div>
-                                                <div class="row check-holder">
+                                                <!--<div class="row check-holder">
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
 		                                                <div class="form-group">
 		                                                    <label for="isStudentField">IsStudent</label>
-		                                                    <input class="form-control" type="checkbox" id="isStudentField" xmp-write-ador="xmp.r['IsStudent']" />
+		                                                    <input class="form-control" type="checkbox" id="isStudentField" checked="{{xmp.r['IsStudent']}}" xmp-write-ador="xmp.r['IsStudent']" />
 		                                                </div>
 		                                            </div>
 		                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
 		                                                <div class="form-group">
 		                                                    <label for="vsitedField">Visited</label>
-		                                                    <input class="form-control" type="checkbox" id="vsitedField" xmp-write-ador="xmp.r['Visited']" />
+		                                                    <input class="form-control" type="checkbox" id="vsitedField" checked="{{xmp.r['Visited']}}" xmp-write-ador="xmp.r['Visited']" />
 		                                                </div>
 		                                            </div>
 		                                        </div>
                                                 <div class="form-group">
                                                     <label for="emailField">Email</label>
-                                                    <span class="form-control" id="emailField">{{xmp.r['Email']}}</span>
-                                                </div>
+                                                    <input id="emailField" type="email" class="form-control" xmp-write-ador="xmp.r['Email']" xmp-tracking-action="email edited">
+                                                </div>-->
                                                 <div class="button-holder">
-	                                                <button class="btn btn-minor" type="submit" value="save" xmp-success-url="start.html?updateaction=firstnameLastNameChanged">Save with redirect</button>
+	                                                <button class="btn btn-minor" type="submit" value="save" xmp-success-url="display_data.html?updateaction=firstnameLastNameChanged">Save with redirect</button>
 	                                                <button class="btn btn-minor" type="submit" value="save with redirect and alert" xmp-success-url="start.html?updateaction=secondary" xmp-success-js="alert('edit success')">Save with redirect and alert</button>
 	                                                <button class="btn btn-minor btn-danger" type="submit" value="save no redirect">Save no redirect</button>
 	                                            </div>
@@ -113,8 +112,8 @@
                                                 <h2 class="text-center">Now, just your email</h2>
                                                 <form xmp-update xmp-success-url="start.html?updateaction=emailChanged" xmp-success-track-action="update">
                                                     <div class="form-group">
-                                                        <label for="text3">First Name</label>
-                                                        <input id="text3" type="email" class="form-control" xmp-write-ador="xmp.r['Email']" xmp-tracking-action="email edited">
+                                                        <label for="emailField2">Email</label>
+                                                        <input id="emailField2" type="email" class="form-control" xmp-write-ador="xmp.r['Email']" xmp-tracking-action="email edited">
                                                     </div>
                                                     <button class="btn btn-minor" type="submit" value="save email">Save email</button>
                                                 </form>

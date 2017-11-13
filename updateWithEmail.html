@@ -9,6 +9,7 @@
     <link href="./css/bootstrap-select.css" rel="stylesheet" media="screen">
     <link href="./css/bootstrap.css" rel="stylesheet" media="screen">
 	<link href="./css/main.css" rel="stylesheet" media="screen">
+    <link href="./css/font-awesome.css" rel="stylesheet" media="screen">
 	<link href="https://ajax.xmcircle.com/ajax/libs/xmpl/1.9.1/xmp/css/xmp.css" rel="stylesheet" media="screen">
 
 	<!-- XMPie XMPL library -->
@@ -18,42 +19,7 @@
     <script type="text/javascript" src="./js/bootstrap-select.js"></script>
     <script type="text/javascript" src="./js/bootstrap.js"></script>
 	<script type="text/javascript" src="./xmpcfg.js"></script>
-	<script type="text/javascript">
-
-       $(function(){
-          $(document).ready(function(){
-
-            var ridVal = getURLParameter('rid');
-            console.log('ResId = ' + ridVal);
-            if (ridVal === null){
-              $("#ridList").attr('display', 'none');
-//              goByHREF();
-            }
-            else{
-              $("#ridList").attr('display', 'block');
-             // $('#ridList').val(ridVal);
-            }
-           });
-       });
-
-        function getURLParameter(name) {
-          return decodeURIComponent(
-            (new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)')
-              .exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
-        }
-
-        function goByHREF(pageName) {
-            var winLocation = window.location;
-            var value = '?rid=' + $('#ridList').val();
-            if (pageName == null) {
-                return winLocation.replace(winLocation.origin + winLocation.pathname + value);
-            }
-            else {
-                console.log(winLocation);
-                return winLocation.href = pageName + value;
-            }
-        }
-    </script>
+	
 </head>
 <body>
 	<div class="main-wrapper">
@@ -73,48 +39,21 @@
                             </div>
                             <div class="collapse navbar-collapse" id="navbar-collapse">
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li class="restart"><a href="#">Restart</a></li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Emails<span class="caret"></span></a>
-                                        <form method="GET" class="dropdown-menu">
-                                            <ul>
-                                                <li><a href="updateWithEmail.html?rid=Jerry.Jones@example.com">Jerry.Jones@example.com</a></li>
-                                                <li><a href="updateWithEmail.html?rid=Jennifer.Jones@example.com">Jennifer.Jones@example.com</a></li>
-                                                <li><a href="updateWithEmail.html?rid=Jimmy.Jones@example.com">Jimmy.Jones@example.com</a></li>
-                                                <li><a href="updateWithEmail.html?rid=Sandra.Smith@example.com">Sandra.Smith@example.com</a></li>
-                                                <li><a href="updateWithEmail.html?rid=Sam.Smith@example.com">Sam.Smith@example.com</a></li>
-                                                <li><a href="updateWithEmail.html?rid=Mary.McAndrews@example.com">Mary.McAndrews@example.com</a></li>
-                                                <li><a href="updateWithEmail.html?rid=Mike.McAndrews@example.com">Mike.McAndrews@example.com</a></li>
-                                                <li><a href="updateWithEmail.html?rid=Gina.Green@example.com">Gina.Green@example.com</a></li>
-                                            </ul>
-                                        </form>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Openxm pages<span class="caret"></span></a>
-                                        <div class="dropdown-menu">
-                                            <span class="title">Recepient ID:</span>
-                                            <ul>
-                                                <li><a href="#">Action</a></li>
-                                                <li><a href="#">Another action</a></li>
-                                                <li><a href="#">Something else here</a></li>
-                                                <li><a href="#">Separated link</a></li>
-                                                <li><a href="#">One more separated link</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
+                                    <li><a href="start.html"><i class="fa fa-history" aria-hidden="true"></i>&nbsp;Landing&nbsp;Page</a></li>
+                                    <li><a href="display_data.html"><i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp;View</a></li>
+                                    
                                     <li class="github"><a href="#">XMPL on GitHub</a></li>
                                     <li class="twitter"><a href="#">Twitter</a></li>
                                     <li class="facebook"><a href="#">Facebook</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-bordered pull-right add-recipients">+ Add Recipients</button>
                     </nav>
                 </div>
             </div>
         </header>
-        <div class="wrapper"  id="ridList">
-            <div class="container">
+        <div class="wrapper">
+            <div class="container" ng-controller="XMPPersonalizedPage" xmp-tracking-page-name="recipient update" xmp-cloak="">
                 <div class="promo">
                     <h1>{{xmp.r['First Name']}}'s another update form</h1>
                 </div>
@@ -140,7 +79,7 @@
                                                     <input id="text2" type="text" class="form-control" xmp-write-ador="xmp.r['Last Name']" xmp-tracking-action="last name edited">
                                                 </div>
                                                 <div class="button-holder">
-                                                    <button class="btn btn-minor" type="submit" value="save" xmp-success-url="index .html?updateaction=firstnameLastNameChanged">Save</button>
+                                                    <button class="btn btn-minor" type="submit" value="save" xmp-success-url="display_data.html?updateaction=firstnameLastNameChanged">Save</button>
                                                 </div>
                                             </form>
                                         </div>
